@@ -1,0 +1,246 @@
+.div-general {
+    height: auto;
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1E3B51;
+    background: -webkit-linear-gradient(bottom, #1E3B51, #C11E89);
+    background: -moz-linear-gradient(bottom, #1E3B51, #C11E89);
+    background: linear-gradient(to top, #1E3B51, #C11E89);
+}
+
+.div-general form {
+    width: 70%;
+    height: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.609);
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px -5px #000000;
+}
+
+.div-general form h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+.div-general form h2 {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    color: #fff;
+}
+
+.div-general form .div-inputs {
+    width: 95.5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border: solid 2px #fff;
+    border-radius: 4px;
+}
+
+.div-general form .div-inputs label {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    color: #fff;
+}
+
+.div-general form .div-inputs input:not(.input-radio),
+select {
+    width: 60%;
+    height: 28px;
+    padding-left: 3%;
+    border-radius: 4px;
+    background: none;
+    border: solid 2px #1896b6;
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    color: #fff !important;
+    font-weight: bolder;
+}
+
+.div-general form .div-inputs input:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.div-general form .div-inputs .div-input {
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-general form .div-inputs .div-general-radios .div-radio {
+    width: 60%;
+    display: flex;
+}
+
+.div-general form .div-inputs .div-general-radios .div-radio .label-hombre {
+    margin-right: 10%;
+}
+
+.div-general form .div-inputs .div-general-radios .div-radio input {
+    margin-right: 3%;
+    width: 18px;
+}
+
+.div-general form .div-inputs .div-izquierdo,
+.div-derecho {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.div-general form .div-inputs .div-derecho {
+    width: 50%;
+}
+
+.div-general form .div-inputs .div-derecho {
+    width: 50%;
+}
+
+.div-general form .btn-enviar {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: solid 3px #1896b6;
+    background: none;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Estilos para la seccion de datos particulares */
+
+.div-general form .div-inputs select,
+option {
+    color: #000000;
+}
+
+.div-general form .div-inputs .div-estado-input {
+    display: none;
+}
+
+.div-general form .div-inputs .div-estado-select {
+    display: none;
+}
+
+
+/* Estilos para los datos con checkbox */
+
+.div-datos-gustos .div-general-checkbox {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-auto-rows: 80px;
+    column-gap: 6%;
+}
+
+.div-datos-gustos .div-general-checkbox .div-check {
+    display: flex;
+}
+
+.div-general form .div-musica {
+    display: none;
+}
+
+.div-general form .h2-musica {
+    display: none;
+}
+
+
+/* Estilos para el div de los errores */
+
+.div-general form .div-errores {
+    display: none;
+    border-color: red;
+}
+
+.div-general form .div-errores .div-error {
+    display: none;
+}
+
+.div-general form .div-errores p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+.div-general form .div-errores ul {
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+
+/* Estilos para div exito */
+
+.div-general form .div-exito {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-color: green;
+}
+
+.div-general form .div-exito p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .div-general form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .div-general form .div-datos-personales,
+    .div-datos-particulares {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .div-general form .div-inputs .div-derecho {
+        width: 100%;
+    }
+    .div-general form .div-inputs .div-izquierdo {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .div-datos-gustos .div-general-checkbox {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-auto-rows: 80px;
+        column-gap: 10%;
+    }
+}

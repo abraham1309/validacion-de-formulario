@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion de formulario</title>
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <!-- font-family: 'Kanit', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="div-general">
+        <form>
+
+            <h1>Formulario para la validacion de datos</h1>
+
+            <h2>Datos personales</h2>
+            <div class="div-inputs div-datos-personales">
+                <div class="div-izquierdo">
+                    <div class="div-input">
+                        <label for="inputNombre">Nombre:</label>
+                        <input type="text" id="inputNombre">
+                    </div>
+
+                    <div class="div-input">
+                        <label for="inputAPaterno">A. paterno:</label>
+                        <input type="text" id="inputAPaterno">
+                    </div>
+
+                    <div class="div-input">
+                        <label for="inputAMaterno">A. Materno</label>
+                        <input type="text" id="inputAMaterno">
+                    </div>
+                </div>
+
+                <div class="div-derecho">
+                    <div class="div-input">
+                        <label for="inputEdad">Edad:</label>
+                        <input type="number" id="inputEdad">
+                    </div>
+
+                    <div class="div-input div-general-radios">
+                        <label for="">Sexo</label>
+
+                        <div class="div-radio">
+                            <input type="radio" id="inputHombre" value="Hombre" class="input-radio" name="sexo">
+                            <label class="label-hombre">Hombre</label><br>
+
+                            <input type="radio" id="inputMujer" value="Mujer" class="input-radio" name="sexo">
+                            <label for="inputMujer">Mujer</label><br>
+                        </div>
+                    </div>
+
+                    <div class="div-input">
+                        <label for="inputRFC">RFC</label>
+                        <input type="text" id="inputRFC" maxlength="10" onkeyup="mayusculas(this)">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <h2>Datos particulares</h2>
+            <div class="div-inputs div-datos-particulares">
+                <div class="div-izquierdo">
+                    <div class="div-input">
+                        <label for="selectPais">País:</label>
+                        <select id="selectPais" onchange="validarPais()">
+                            <option value="seleccion">Seleccione una opcion</option>
+                            <option value="Mexico">México</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </div>
+
+                    <div class="div-input div-estado-input" id="divEstadoInput">
+                        <label for="inputEstado">Estado:</label>
+                        <input type="text" id="inputEstado" required>
+                    </div>
+
+                    <div class="div-input div-estado-select" id="divEstadoSelect">
+                        <label for="selectEstado">Estado:</label>
+                        <select id="selectEstado" onchange="validacionEstadoDelSelect()">
+                            <option value="seleccion">Selecciona una opcion</option>
+                            <option value="Aguascalientes">Aguascalientes</option>
+                            <option value="Baja California">Baja California</option>
+                            <option value="Baja California Sur">Baja California Sur</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="CDMX">Ciudad de México</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Estado de México">Estado de México</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">San Luis Potosí</option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                    </div>
+
+                    <div class="div-input">
+                        <label for="inputDomicilio">Domicilio:</label>
+                        <input type="text" id="inputDomicilio">
+                    </div>
+
+                    <div class="div-input">
+                        <label for="inputCp">C.P:</label>
+                        <input type="number" id="inputCp">
+                    </div>
+                </div>
+
+                <div class="div-derecho">
+                    <div class="div-input">
+                        <label for="inputCorreo">Correo:</label>
+                        <input type="email" id="inputCorreo" required>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="div-inputs div-errores" id="divErrorPais">
+                <div class="div-error" id="errorPais">
+                    <ul>
+                        <li>Debe seleccionar un pais valido</li>
+                    </ul>
+                </div>
+                <div class="div-error" id="errorEstado">
+                    <ul>
+                        <li>Debe seleccionar un estado valido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <h2>Gustos (Seleccionar al menos 2)</h2>
+            <div class="div-inputs div-datos-gustos">
+                <div class="div-general-checkbox" id="divGustos">
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxMusica">Musica</label><br>
+                        <input type="checkbox" id="checkboxMusica" value="Musica" name="checkBox" class="input-checkbox" onchange="obtenerGenerosMusicales()">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxBaile">Baile</label><br>
+                        <input type="checkbox" id="checkboxBaile" name="checkBox" value="Baile">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxCine">Cine</label><br>
+                        <input type="checkbox" id="checkboxCine" name="checkBox" value="Cine">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxViajes">Viajes</label><br>
+                        <input type="checkbox" id="checkboxViajes" name="checkBox" value="Viajes">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxLectura">Lectura</label><br>
+                        <input type="checkbox" id="checkboxLectura" name="checkBox" value="Lectura">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxTeatro">Teatro</label><br>
+                        <input type="checkbox" id="checkboxTeatro" name="checkBox" value="Teatro">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxDeporte">Deporte</label><br>
+                        <input type="checkbox" id="checkboxDeporte" name="checkBox" value="Deporte">
+                    </div>
+
+                    <div class="div-check" id="divCheck">
+                        <label for="checkboxOtro">Otro</label><br>
+                        <input type="checkbox" id="checkboxOtro" name="checkBox" value="Otro">
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <h2 class="h2-musica" id="h2Musica">Genero de musica (Seleccionar al menos 2)</h2>
+            <div class="div-inputs div-datos-gustos div-musica" id="divGenerosMusicales">
+
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <div class="div-inputs div-errores" id="divErrores">
+                <p>No se pudo enviar el formulario, revise los siguientes errores</p>
+                <div class="div-error" id="divCamposVacios">
+                    <ul>
+                        <li>Revise los campos que no esten vacios</li>
+                    </ul>
+                </div>
+
+                <div class="div-error" id="divGenero">
+                    <ul>
+                        <li>Seleccione su genero</li>
+                    </ul>
+                </div>
+
+                <div class="div-error" id="divRFC">
+                    <ul>
+                        <li>Revise el formato del RFC que sea 4 letras y 6 numeros</li>
+                    </ul>
+                </div>
+
+                <div class="div-error" id="divCorreo">
+                    <ul>
+                        <li>El formato del correo es incorrecto</li>
+                    </ul>
+                </div>
+
+                <div class="div-error" id="divGustoError">
+                    <ul>
+                        <li>En la seccion de gusto, seleccione al menos 2 gustos</li>
+                    </ul>
+                </div>
+
+                <div class="div-error" id="errorGenerosMusicales">
+                    <ul>
+                        <li>En la seccion de generos musicales, seleccione al menos 2 generos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="div-inputs div-exito" id="divExito">
+                <p>¡Datos enviados correctamente!</p>
+            </div>
+
+            <input type="button" value="ENVIAR" onclick="validacion()" class="btn-enviar">
+            <br><br>
+        </form>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
